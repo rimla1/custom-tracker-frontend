@@ -12,11 +12,11 @@ const Players = () => {
         {players.length < 5 && <h1>You shall not pass!</h1>}
       </div>
       <div className='flex flex-wrap justify-center py-5 space-between'>
-        <button onClick={page > 1 ? previousClickHandler : null} className={`bg-blue-400 m-2 p-2 ${page === 1 && 'disabled: bg-gray-500 cursor-not-allowed'}`}>Previous</button>
+        <button onClick={page > 1 ? previousClickHandler : null} className={`bg-blue-400 m-2 p-2 ${page === 1 && 'disabled: bg-gray-400 cursor-not-allowed'}`}>Previous</button>
         <h1 className='border border-solid border-blue-400 m-2 p-2 rounded-3xl'>
           {page}
         </h1>
-        <button onClick={players.length === 5 ? nextClickHandler : null} className={`bg-blue-400 m-2 p-2 ${players.length < 5 && 'disabled: bg-gray-500 cursor-not-allowed'}`}>Next</button>
+        <button onClick={players.length === 5 ? nextClickHandler : null} className={`bg-blue-400 m-2 p-2 ${players.length < 5 && 'disabled: bg-gray-400 cursor-not-allowed'}`}>Next</button>
       </div>
     </div>
   );
