@@ -4,6 +4,7 @@ const Header = () => {
             <ul className='flex flex-wrap'>
                 <li className='m-2 p-2'>Home</li>
                 <li className='m-2 p-2'>Players</li>
+                <li className='m-2 p-2'>Shuffle</li>
             </ul>
         </div>
     )
