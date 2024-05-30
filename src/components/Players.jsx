@@ -15,7 +15,7 @@ const Players = () => {
         <h1 className='border border-solid border-blue-400 m-2 p-2 rounded-3xl'>
           {page}
         </h1>
-        <button onClick={nextClickHandler} className={`bg-blue-400 m-2 p-2 ${players.length < 5 && 'disabled: bg-gray-500 cursor-not-allowed'}`}>Next</button>
+        <button onClick={players.length === 5 ? nextClickHandler : null} className={`bg-blue-400 m-2 p-2 ${players.length < 5 && 'disabled: bg-gray-500 cursor-not-allowed'}`}>Next</button>
       </div>
     </div>
   );
