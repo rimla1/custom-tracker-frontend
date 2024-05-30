@@ -5,7 +5,6 @@ const Shuffle = () => {
 
   const clickBalance = () => {
     setActiveButton('balance')
-    console.log("NAH!")
   }
 
   const clickRandom = () => {
