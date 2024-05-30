@@ -9,6 +9,7 @@ const Players = () => {
         {players?.map((player) => {
           return <PlayerInfo key={player.id} info={player} />;
         })}
+        {players.length < 5 && <h1>You shall not pass!</h1>}
       </div>
       <div className='flex flex-wrap justify-center py-5 space-between'>
         <button onClick={page > 1 ? previousClickHandler : null} className={`bg-blue-400 m-2 p-2 ${page === 1 && 'disabled: bg-gray-500 cursor-not-allowed'}`}>Previous</button>
