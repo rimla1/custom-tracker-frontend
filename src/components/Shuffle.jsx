@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import ShuffleBalance from './ShuffleBalance';
+import ShuffleRandom from './ShuffleRandom';
 
 const Shuffle = () => {
   const [activeButton, setActiveButton] = useState('random')
@@ -19,7 +21,7 @@ const Shuffle = () => {
         <button onClick={activeButton === "random" ? clickBalance : null} className={`m-2 p-2 ${activeButton === 'balance' ? 'bg-blue-400' : 'bg-gray-400'}`}>Balance</button>
       </div>
       <div>
-        <h1>{activeButton === 'random' ? "RANDOMSHUFFLECOMPONENT" : "BALANCESHUFFLECOMPONENT" } </h1>
+        {activeButton === 'random' ? <ShuffleRandom /> : <ShuffleBalance /> }
       </div>
     </div>
   );
