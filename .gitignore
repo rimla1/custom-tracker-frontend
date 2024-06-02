@@ -8,6 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 src/utils/constants.js
+src/utils/ranks.js
+src/utils/lpRanges.js
 
 
 node_modules
