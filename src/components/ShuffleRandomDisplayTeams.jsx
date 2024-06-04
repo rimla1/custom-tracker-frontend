@@ -1,8 +1,8 @@
-const ShuffleRandomDisplayTeams = ({teams}) => {
+const ShuffleRandomDisplayTeams = ({teams, teamsDivRef}) => {
   
 
   return (
-    <div className='flex justify-center items-start space-x-4 mt-6 mb-6'>
+    <div ref={teamsDivRef} className='flex justify-center items-start space-x-4 mt-6 mb-6'>
       <div className='bg-blue-200 p-4 rounded shadow w-60'>
         {teams.length === 2
           ? teams[0].map((player, index) => (

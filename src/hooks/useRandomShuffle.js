@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { RANDOMSHUFFLE_API } from '../utils/constants';
 
 const useRandomShuffle = () => {
     const [inputValues, setInputValues] = useState(Array(10).fill(''));
     const [teams, setTeams] = useState([]);
+    const teamsDivRef = useRef(null)
   
     const handleInputChange = (index, value) => {
       const newInputValues = [...inputValues];
@@ -22,7 +23,13 @@ const useRandomShuffle = () => {
       setTeams(teams);
     };
 
-    return [inputValues, teams, handleInputChange, handleSubmit]
+    useEffect(() => {
+      if(teams && teamsDivRef.current){
+        teamsDivRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, [teams])
+
+    return [inputValues, teams, handleInputChange, handleSubmit, teamsDivRef]
 }
 
 export default useRandomShuffle

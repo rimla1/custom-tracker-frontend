@@ -2,7 +2,7 @@ import ShuffleRandomDisplayTeams from './ShuffleRandomDisplayTeams';
 import useRandomShuffle from '../hooks/useRandomShuffle';
 
 const ShuffleRandom = () => {
-  const [inputValues, teams, handleInputChange, handleSubmit] = useRandomShuffle()
+  const [inputValues, teams, handleInputChange, handleSubmit, teamsDivRef] = useRandomShuffle()
 
   return (
     <>
@@ -24,7 +24,7 @@ const ShuffleRandom = () => {
           </button>
         </form>
       </div>
-      {teams.length === 2 && (<ShuffleRandomDisplayTeams teams={teams}/>)}
+      {teams.length === 2 && (<ShuffleRandomDisplayTeams teams={teams} teamsDivRef={teamsDivRef}/>)}
     </>
   );
 };
