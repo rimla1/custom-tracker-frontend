@@ -1,19 +1,9 @@
-import { useState } from 'react';
+import useShuffleButton from '../hooks/useShuffleButtons';
 import ShuffleBalance from './ShuffleBalance';
 import ShuffleRandom from './ShuffleRandom';
 
 const Shuffle = () => {
-  const [activeButton, setActiveButton] = useState('random')
-
-  const clickBalance = () => {
-    setActiveButton('balance')
-  }
-
-  const clickRandom = () => {
-    setActiveButton('random')
-  }
-
-
+  const [activeButton, clickBalance, clickRandom] = useShuffleButton()
   return (
     <div>
       <div className='flex flex-wrap justify-center py-5 space-between'>
