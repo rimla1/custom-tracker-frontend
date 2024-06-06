@@ -1,5 +1,5 @@
 import ShuffleRandomDisplayTeams from './ShuffleRandomDisplayTeams';
-import useRandomShuffle from '../hooks/useRandomShuffle';
+import useRandomShuffle from '../../hooks/useRandomShuffle';
 
 const ShuffleRandom = () => {
   const [inputValues, teams, handleInputChange, handleSubmit, teamsDivRef] = useRandomShuffle()

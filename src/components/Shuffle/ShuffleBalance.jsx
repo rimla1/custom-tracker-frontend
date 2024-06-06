@@ -1,5 +1,5 @@
-import useShuffleBalance from '../hooks/useShuffleBalance';
-import { ranks } from '../utils/ranks';
+import useShuffleBalance from '../../hooks/useShuffleBalance';
+import { ranks } from '../../utils/ranks';
 import ShuffleBalanceDisplayTeams from './ShuffleBalanceDisplayTeams';
 
 const ShuffleBalance = () => {

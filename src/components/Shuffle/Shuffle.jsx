@@ -1,4 +1,4 @@
-import useShuffleButton from '../hooks/useShuffleButtons';
+import useShuffleButton from '../../hooks/useShuffleButtons';
 import ShuffleBalance from './ShuffleBalance';
 import ShuffleRandom from './ShuffleRandom';
 
