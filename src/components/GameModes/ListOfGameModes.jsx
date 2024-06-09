@@ -5,7 +5,7 @@ import ModalGameMode from './ModalGameMode';
 const ListOfGameModes = () => {
   const [allGameModes, setAllGameModes] = useState([]);
   const [page, setPage] = useState(1);
-  const [showModalId, setShowModalId] = useState(false)
+  const [gameModeModal, setGameModeModal] = useState(false)
 
   useEffect(() => {
     fetchData();
@@ -29,8 +29,8 @@ const ListOfGameModes = () => {
     setPage(page + 1);
   };
 
-  const openModal = (gameId) => {
-    setShowModalId(gameId)
+  const openModal = (gameMode) => {
+    setGameModeModal(gameMode)
   }
 
   return (
@@ -43,11 +43,11 @@ const ListOfGameModes = () => {
           >
             <h2 className='text-xl font-semibold mb-2'>{gameMode.title}</h2>
             <p className='text-gray-700'>{gameMode.description}</p>
-            <button onClick={() => openModal(gameMode.id)} className='bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded'>Open</button>
+            <button onClick={() => openModal(gameMode)} className='bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded'>Open</button>
           </div>
         ))}
       </div>
-      {showModalId && <ModalGameMode gameModeId={showModalId} setShowModalId={setShowModalId}/>}
+      {gameModeModal && <ModalGameMode gameModeModal={gameModeModal} setGameModeModal={setGameModeModal}/>}
       <div className='flex justify-center items-center mt-8'>
         <button
           disabled={page === 1}
