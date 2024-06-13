@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import BattleOfRoots from './BattleOfRoots';
 import BattleOfSpecies from './BattleOfSpecies';
 import ListOfGameModes from './ListOfGameModes';
 
@@ -13,7 +14,7 @@ const GameModes = () => {
     </div>
     {activeButton === "AM" && <ListOfGameModes />}
     {activeButton === "BOS" && <BattleOfSpecies />}
-    {activeButton === "BOR" && <h1>Coming soon...</h1>}
+    {activeButton === "BOR" && <BattleOfRoots />}
     </>
   );
 };

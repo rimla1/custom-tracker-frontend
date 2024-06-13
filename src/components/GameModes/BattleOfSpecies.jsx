@@ -1,36 +1,10 @@
-import { useState } from 'react';
-import { BATTLEOFSPECIES_API } from '../../utils/constants';
+import useBattleOfSpecies from '../../hooks/useBattleOfSpecies';
 import { speciesOptions } from '../../utils/species';
-import DisplaySpeciesChampions from './DisplaySpeciesChampions';
+import DisplayChampions from './DisplayChampions';
 import InfoBattleGameMode from './InfoBattleGameMode';
 
 const BattleOfSpecies = () => {
-  const [twoChampsArray, setTwoChampsArray] = useState([]);
-  const [species, setSpecies] = useState({ specie1: '', specie2: '' });
-
-  
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    fetchData()
-  };
-
-
-  const onChangeHandler = (event) => {
-    setSpecies((prevSpecies) => ({
-      ...prevSpecies,
-      [event.target.name]: event.target.value,
-    }));
-  };
-
-  const fetchData = async () => {
-    const data = await fetch(
-      `${BATTLEOFSPECIES_API}?specie1=${species.specie1}&specie2=${species.specie2}`
-    );
-    const arrayOfChamps = await data.json();
-    setTwoChampsArray(arrayOfChamps);
-  };
-
+  const [twoChampsArray, handleSubmit, onChangeHandler] = useBattleOfSpecies()
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="mb-4 text-4xl">Battle of Species</h1>
@@ -58,7 +32,7 @@ const BattleOfSpecies = () => {
           ))}
         </select>
       </form>
-      {(twoChampsArray.specie1Champions && twoChampsArray.specie2Champions) && <DisplaySpeciesChampions specie1Champions={twoChampsArray.specie1Champions} specie2Champions={twoChampsArray.specie2Champions} />}
+      {(twoChampsArray.specie1Champions && twoChampsArray.specie2Champions) && <DisplayChampions champions1={twoChampsArray.specie1Champions} champions2={twoChampsArray.specie2Champions} />}
     </div>
   );
 
