@@ -1,5 +1,5 @@
 import Header from './components/Header'
-import Players from './components/Players'
+import Players from './components/Player/Players'
 import Leaderboard from './components/Leaderboard'
 import Shuffle from './components/Shuffle/Shuffle'
 import GameModes from './components/GameModes/GameModes'
@@ -36,6 +36,10 @@ export const appRouter = createBrowserRouter([
         {
           path: '/game-modes',
           element: <GameModes />
+        },
+        {
+          path: '/players',
+          element: <Players />
         }
     ],
     errorElement: <Error />
