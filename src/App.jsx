@@ -1,11 +1,13 @@
 import Header from './components/Header'
 import Players from './components/Player/Players'
-import Leaderboard from './components/Leaderboard'
+import Leaderboard from './components/Leaderboard/Leaderboard'
 import Shuffle from './components/Shuffle/Shuffle'
 import GameModes from './components/GameModes/GameModes'
 import { createBrowserRouter, Outlet } from 'react-router-dom'
 import Error from './components/Error'
 import Home from './components/Home'
+import MatchHistory from './components/MatchHistory/MatchHistory'
+import CreateGame from './components/CreateGame/CreateGame'
 
 function App() {
   return (
@@ -40,6 +42,18 @@ export const appRouter = createBrowserRouter([
         {
           path: '/players',
           element: <Players />
+        },
+        {
+          path: '/leaderboard',
+          element: <Leaderboard />
+        },
+        {
+          path: 'match-history',
+          element: <MatchHistory />
+        },
+        {
+          path: 'create-game',
+          element: <CreateGame />
         }
     ],
     errorElement: <Error />

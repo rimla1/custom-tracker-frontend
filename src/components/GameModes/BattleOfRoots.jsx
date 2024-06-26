@@ -1,7 +1,7 @@
 import InfoBattleGameMode from './InfoBattleGameMode';
 import { placeOfOriginOptions } from '../../utils/placeOfOrigin';
 import DisplayChampions from './DisplayChampions';
-import useBattleOfRoots from '../../hooks/useBattleOfRoots';
+import useBattleOfRoots from '../../hooks/GameModes/useBattleOfRoots';
 
 const BattleOfRoots = () => {
   const [twoArrayChampions, handleSubmit, onChangeHandler] = useBattleOfRoots()

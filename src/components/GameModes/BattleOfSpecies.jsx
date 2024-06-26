@@ -1,4 +1,4 @@
-import useBattleOfSpecies from '../../hooks/useBattleOfSpecies';
+import useBattleOfSpecies from '../../hooks/GameModes/useBattleOfSpecies';
 import { speciesOptions } from '../../utils/species';
 import DisplayChampions from './DisplayChampions';
 import InfoBattleGameMode from './InfoBattleGameMode';
