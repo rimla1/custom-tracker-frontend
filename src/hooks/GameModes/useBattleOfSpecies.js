@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BATTLEOFSPECIES_API } from '../utils/constants'
+import { BATTLEOFSPECIES_API } from '../../utils/constants'
 
 const useBattleOfSpecies = () => {
     const [twoChampsArray, setTwoChampsArray] = useState([]);

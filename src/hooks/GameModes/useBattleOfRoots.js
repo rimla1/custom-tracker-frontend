@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BATTLEOFROOTS_API } from '../utils/constants';
+import { BATTLEOFROOTS_API } from '../../utils/constants';
 
 const useBattleOfRoots = () => {
   const [twoArrayChampions, setTwoArrayChampions] = useState([]);
