@@ -21,6 +21,7 @@ const CreateGame = () => {
   const [customId, setCustomId] = useState('');
   const [length, setLength] = useState('');
   const [result, setResult] = useState('');
+  const token = localStorage.getItem('jwtToken');
 
   const handleCustomIdChange = (e) => {
     setCustomId(e.target.value);
@@ -40,7 +41,10 @@ const CreateGame = () => {
     e.preventDefault();
     const payload = await fetch(`${CREATEGAME_API}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify({
         customId: customId,
         length: length,
@@ -76,7 +80,7 @@ const CreateGame = () => {
             onChange={(e) => handleGameLengthChange(e)}
           />
         </div>
-  
+
         {/* Blue Team */}
         <div className='bg-blue-500 p-4 rounded-md'>
           <h2 className='text-white mb-4'>Blue Team</h2>
@@ -196,13 +200,17 @@ const CreateGame = () => {
                 className='border p-2 w-24 flex-grow'
                 placeholder='Champion'
                 onChange={(e) =>
-                  handlePlayersStatsChange(index, 'championPlayed', e.target.value)
+                  handlePlayersStatsChange(
+                    index,
+                    'championPlayed',
+                    e.target.value
+                  )
                 }
               />
             </div>
           ))}
         </div>
-  
+
         {/* Red Team */}
         <div className='bg-red-500 p-4 rounded-md'>
           <h2 className='text-white mb-4'>Red Team</h2>
@@ -214,7 +222,11 @@ const CreateGame = () => {
                 className='border p-2 w-24 flex-grow'
                 placeholder='Username'
                 onChange={(e) =>
-                  handlePlayersStatsChange(index + 5, 'inGameName', e.target.value)
+                  handlePlayersStatsChange(
+                    index + 5,
+                    'inGameName',
+                    e.target.value
+                  )
                 }
               />
               <input
@@ -288,7 +300,11 @@ const CreateGame = () => {
                 placeholder='Damage'
                 type='number'
                 onChange={(e) =>
-                  handlePlayersStatsChange(index + 5, 'damageDealt', e.target.value)
+                  handlePlayersStatsChange(
+                    index + 5,
+                    'damageDealt',
+                    e.target.value
+                  )
                 }
               />
               <input
@@ -298,13 +314,21 @@ const CreateGame = () => {
                 placeholder='Gold'
                 type='number'
                 onChange={(e) =>
-                  handlePlayersStatsChange(index + 5, 'goldSpent', e.target.value)
+                  handlePlayersStatsChange(
+                    index + 5,
+                    'goldSpent',
+                    e.target.value
+                  )
                 }
               />
               <select
                 value={player.position}
                 onChange={(e) =>
-                  handlePlayersStatsChange(index + 5, 'position', e.target.value)
+                  handlePlayersStatsChange(
+                    index + 5,
+                    'position',
+                    e.target.value
+                  )
                 }
                 className='border p-2 w-24 flex-grow'
                 required
@@ -322,13 +346,17 @@ const CreateGame = () => {
                 className='border p-2 w-24 flex-grow'
                 placeholder='Champion'
                 onChange={(e) =>
-                  handlePlayersStatsChange(index + 5, 'championPlayed', e.target.value)
+                  handlePlayersStatsChange(
+                    index + 5,
+                    'championPlayed',
+                    e.target.value
+                  )
                 }
               />
             </div>
           ))}
         </div>
-  
+
         <button
           type='submit'
           className='bg-green-500 text-white p-2 rounded-md hover:bg-green-600'
@@ -338,7 +366,6 @@ const CreateGame = () => {
       </form>
     </div>
   );
-  
 };
 
 export default CreateGame;

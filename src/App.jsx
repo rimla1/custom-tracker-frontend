@@ -8,14 +8,19 @@ import Error from './components/Error'
 import Home from './components/Home'
 import MatchHistory from './components/MatchHistory/MatchHistory'
 import CreateGame from './components/CreateGame/CreateGame'
+import Authentication from './components/Authentication/Authentication'
+import ProtectedRouteUser from './components/Authentication/ProtectedRouteUser'
+import { useState } from 'react'
+import ProtectedRouteAdmin from './components/Authentication/ProtectedRouteAdmin'
 
 function App() {
+  const [token, setToken] = useState("")
   return (
     <>
     {/* Header */}
-    <Header />
+    <Header token={token}/>
     {/* Outlet */}
-    <Outlet />
+    <Outlet context={{ setToken }}/>
     {/* Footer */}
 
     </>
@@ -41,11 +46,11 @@ export const appRouter = createBrowserRouter([
         },
         {
           path: '/players',
-          element: <Players />
+          element: <ProtectedRouteUser><Players /></ProtectedRouteUser>
         },
         {
           path: '/leaderboard',
-          element: <Leaderboard />
+          element: <ProtectedRouteUser><Leaderboard /> </ProtectedRouteUser>
         },
         {
           path: 'match-history',
@@ -53,7 +58,11 @@ export const appRouter = createBrowserRouter([
         },
         {
           path: 'create-game',
-          element: <CreateGame />
+          element: <ProtectedRouteAdmin> <CreateGame /> </ProtectedRouteAdmin>
+        },
+        {
+          path: 'authentication',
+          element: <Authentication />
         }
     ],
     errorElement: <Error />
