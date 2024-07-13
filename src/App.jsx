@@ -12,6 +12,9 @@ import Authentication from './components/Authentication/Authentication'
 import ProtectedRouteUser from './components/Authentication/ProtectedRouteUser'
 import { useState } from 'react'
 import ProtectedRouteAdmin from './components/Authentication/ProtectedRouteAdmin'
+import Profile from './components/Profile/Profile'
+import Compare from './components/Compare/Compare'
+
 
 function App() {
   const [token, setToken] = useState("")
@@ -63,7 +66,15 @@ export const appRouter = createBrowserRouter([
         {
           path: 'authentication',
           element: <Authentication />
-        }
+        },
+        {
+          path: "/profile",
+          element: <ProtectedRouteUser><Profile /></ProtectedRouteUser>
+        },
+        {
+          path: "/compare",
+          element: <ProtectedRouteUser><Compare /></ProtectedRouteUser>
+        },
     ],
     errorElement: <Error />
   },

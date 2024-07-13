@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { LOGIN_API } from '../../utils/constants';
 import { useOutletContext } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [errorMessage, setErrorMessage] = useState('');
@@ -8,6 +9,7 @@ const Login = () => {
     email: '',
     password: '',
   });
+  const navigate = useNavigate()
 
   const { setToken } = useOutletContext();
 
@@ -39,6 +41,7 @@ const Login = () => {
       console.log(tokenFromBackend)
       localStorage.setItem('jwtToken', tokenFromBackend);
       setToken(tokenFromBackend)
+      navigate('/profile')
     } catch (error) {
       setErrorMessage('Login failed. Please try again.');
     }
