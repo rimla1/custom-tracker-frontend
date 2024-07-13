@@ -38,7 +38,6 @@ const Login = () => {
       }
 
       const tokenFromBackend = await response.text();
-      console.log(tokenFromBackend)
       localStorage.setItem('jwtToken', tokenFromBackend);
       setToken(tokenFromBackend)
       navigate('/profile')

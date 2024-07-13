@@ -23,7 +23,7 @@ const Leaderboard = () => {
     setPage(page + 1)
   }
 
-  console.log(players)
+
 return (
     <>
     <div className='p-5 m-5 relative overflow-x-auto'>

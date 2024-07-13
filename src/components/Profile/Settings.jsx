@@ -49,7 +49,6 @@ const Settings = ({ playerId }) => {
       }
 
       const data = await response.json();
-      console.log('Saving changes:', data);
       setIsEditing(false);
     } catch (error) {
       console.log(error);

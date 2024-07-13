@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Header = ({ token }) => {
   const tokenFromLocalStorage = localStorage.getItem('jwtToken');
-  console.log(token, tokenFromLocalStorage);
+
   let decodedToken;
   if (token) {
     decodedToken = JSON.parse(atob(token.split('.')[1]));
@@ -12,7 +12,7 @@ const Header = ({ token }) => {
     decodedToken = null;
   }
 
-  console.log('Decoded Token', decodedToken);
+
 
   return (
     <div className='bg-gray-800 text-white'>

@@ -28,7 +28,7 @@ const Compare = () => {
     setPlayersInfo(data)
   };
 
-  console.log(playersInfo)
+
 
   return (
     <div className='flex flex-col items-center justify-start h-screen bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900'>

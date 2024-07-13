@@ -54,7 +54,7 @@ const CreateGame = () => {
     const payloadJson = await payload.json();
     setResult(payloadJson);
   };
-  console.log(result);
+
 
   return (
     <div className='p-4'>
